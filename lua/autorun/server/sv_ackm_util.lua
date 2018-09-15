@@ -23,6 +23,10 @@ function ACkm.load()
         print("[ACkm] Gettings settings file")
         ACkm.Settings = util.JSONToTable(file.Read("ACkm/settings.txt", "DATA"))
     end
+
+
+    include("autorun/server/sv_ackm_util.lua")
+    include("ackm/mysql_main.lua")
 end
    
 hook.Add( "Initialize", "ACkm_Load", ACkm.load )    
