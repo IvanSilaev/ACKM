@@ -10,8 +10,8 @@ if(file.Exists( "bin/gmsv_mysqloo_linux.dll", "LUA" ) or file.Exists( "bin/gmsv_
                                     ACkm.Settings.mysql.Database, 
                                     ACkm.Settings.mysql.Port)
                                 
-        ACkm.DB.onConnected = function ACkm.DBSuccess() print("Test connect!") end
-        ACkm.DB.onConnectionFailed = function ACkm.DBError() print("Error") end
+        ACkm.DB.onConnected = ACkm.DBSuccess
+        ACkm.DB.onConnectionFailed = ACkm.DBError
         ACkm.DB:connect()
     end
 
@@ -22,3 +22,10 @@ else
 	print('[MSync] https://help.serenityservers.net/index.php?title=Garrysmod:How_to_install_mysqloo_or_tmysql')
 end
 
+function ACkm.DBSuccess() 
+    print("Test connect!")
+end 
+
+function ACkm.DBError() 
+    print("Error") 
+end
