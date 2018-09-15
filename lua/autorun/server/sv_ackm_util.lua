@@ -25,4 +25,4 @@ function ACkm.load()
     end
 end
    
-hook.Add( "Initialize", "ACkm_Load", MSync.load )    
+hook.Add( "Initialize", "ACkm_Load", ACkm.load )    
