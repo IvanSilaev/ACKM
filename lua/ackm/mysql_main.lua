@@ -10,8 +10,8 @@ if(file.Exists( "bin/gmsv_mysqloo_linux.dll", "LUA" ) or file.Exists( "bin/gmsv_
                                     ACkm.Settings.mysql.Database, 
                                     ACkm.Settings.mysql.Port)
                                 
-        ACkm.DB.onConnected = function ACkm.DBSuccess() {print("Test connect!")} end
-        ACkm.DB.onConnectionFailed = function ACkm.DBError() {print("Error")} end
+        ACkm.DB.onConnected = function ACkm.DBSuccess() print("Test connect!") end
+        ACkm.DB.onConnectionFailed = function ACkm.DBError() print("Error") end
         ACkm.DB:connect()
     end
 
