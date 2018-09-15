@@ -9,7 +9,9 @@ if(file.Exists( "bin/gmsv_mysqloo_linux.dll", "LUA" ) or file.Exists( "bin/gmsv_
                                     ACkm.Settings.mysql.Password, 
                                     ACkm.Settings.mysql.Database, 
                                     ACkm.Settings.mysql.Port)
-                                
+        
+        print(table.ToString(ACkm.DB, "db", true))
+
         ACkm.DB.onConnected = ACkm.DBSuccess
         ACkm.DB.onConnectionFailed = ACkm.DBError
         ACkm.DB:connect()
